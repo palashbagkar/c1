@@ -14,8 +14,8 @@ def createSampleData(password):
     cur.execute("CREATE TABLE resources(id, title, password, description, color, location, type)")
 
     events = (
-        (0, "The Grand opening of the Newly re-erected JuneBerry College", password, "Ever since the gas-leak explosion that shut down the school, due to damage and dangerous pipelines, there has been lots of attention on the new unveiling of the finally finished JuneBerry College has brought lots of excitement to the local community as with it, it brings many scholarships and new courses for learning.", "yellow", "level 2", "August 5th"),
-        (1, "Boruscant Library Hosts the Esports Grand Finals", password, "This year at the Boruscant Library, the Esports Grand Finals, with major competitors like Team Flyers, Team Fluid, and Team Tier 1. The main games to be played are Counter-Fighters, Vitally, Maelstrom, and other popular competitive games.", "red", "level 3", "August 6th")
+        (0, "The Grand opening of the Newly re-erected JuneBerry College", password, "Ever since the gas-leak explosion that shut down the school, due to damage and dangerous pipelines, there has been lots of attention on the new unveiling of the finally finished JuneBerry College has brought lots of excitement to the local community as with it, it brings many scholarships and new courses for learning.", "yellow", "level 2", 1773758700000),
+        (1, "Boruscant Library Hosts the Esports Grand Finals", password, "This year at the Boruscant Library, the Esports Grand Finals, with major competitors like Team Flyers, Team Fluid, and Team Tier 1. The main games to be played are Counter-Fighters, Vitally, Maelstrom, and other popular competitive games.", "red", "level 3", 1774783800000)
     )
     resources = (
         (0, "Boruscant Library", password, "Welcome to one of the biggest libraries on the planet! Home to over 3,450,000 different books! Being popular for the vast amount of books and options as well for the clubs and events hosted here regularly, inviting more to come and be a part of the community.", "green", "level 7", "library"),

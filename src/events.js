@@ -3,9 +3,10 @@ function createArticles(data) {
     newArticle.classList.add("p-4", "rounded-lg", "w-full", `bg_${data[3]}`, "flex", "flex-col");
     // I probably just dont know how to use sql, but sql is evil and gave the data in arrays without keys, so sorry if the indexing looks a bit unreedable
     // 0: id, 1: title, 2: description 3: color 4: location 5: start time
+    let startDate = new Date(data[5])
     newArticle.dataset.rId = parseInt(data[0]);
     newArticle.innerHTML = `<h3 class="text-2xl font-bold">${data[1]}</h3>
-<p><span class="font-bold">Start Time: </span>${data[5]}</p>
+<p><span class="font-bold">Start Time: </span>${startDate.toLocaleTimeString()}</p>
 <p><span class="font-bold">Location: </span>${data[4]}</p>
 <p class="mt-2 line-clamp-4 grow">${data[2]}</p>
 <div class="flex"><a href="javascript:void(0)" onclick="viewDetails(this)" class="flex items-center justify-center bg-blue-200 dark:bg-sky-600 text-gray-900 dark:text-white rounded-md w-1/2 py-1">See whole summary</a></div>`;

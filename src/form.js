@@ -18,7 +18,8 @@ function showSpecificFields(form) {
 document.getElementById("entryForm").addEventListener('submit', function(event) {
     event.preventDefault();
     form = event.target;
-
+    console.log(form.startTime.valueAsNumber)
+    return
     data = {
             "title" : form.eventname.value,
             "password" : form.password.value,
@@ -36,7 +37,7 @@ document.getElementById("entryForm").addEventListener('submit', function(event) 
     }
 
     if (form.type.value == "event") {
-        data["start"] = form.startTime.value;
+        data["start"] = form.startTime.valueAsNumber;
     } else {
         data["type"] = form.resourceType.value;
     }
