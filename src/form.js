@@ -2,6 +2,12 @@ function showSpecificFields(form) {
     if (form.type.value == "event") {
         sField = form.startTime; // sField: Special or Specific field, specific fields that event and resource dont share
         oField = form.resourceType;
+        const rightNow = new Date();
+        // const minimumTime = `${rightNow.getFullYear()}-${rightNow.getMonth()}-${rightNow.da()}T${rightNow.getHours()}:${rightNow.getMinutes()}`;
+        const minimumTime = new Date(rightNow.getTime() - rightNow.getTimezoneOffset() * 60000).toISOString().split(".")[0];
+        console.log(minimumTime.slice(0, -3))
+
+        sField.setAttribute("min", minimumTime.slice(0, -3));
     } else {
         sField = form.resourceType;
         oField = form.startTime
@@ -18,8 +24,6 @@ function showSpecificFields(form) {
 document.getElementById("entryForm").addEventListener('submit', function(event) {
     event.preventDefault();
     form = event.target;
-    console.log(form.startTime.valueAsNumber)
-    return
     data = {
             "title" : form.eventname.value,
             "password" : form.password.value,
